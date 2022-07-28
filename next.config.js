@@ -7,6 +7,11 @@ const pluginAntdLess = withAntdLess({
 
 module.exports = withPlugins([[pluginAntdLess]], {
   webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"],
+    });
+
     return config;
   },
 });
