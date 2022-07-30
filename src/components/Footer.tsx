@@ -172,7 +172,7 @@ export const Footer = () => (
       </Typography>
       <div style={{ display: "flex", gap: 16 }}>
         <Typography style={{ color: "white" }}>
-          Engineering made in BrazilBrazil
+          Engineering made in Brazil
         </Typography>
         <Image src={Brazil} alt="Brazil flag" />
       </div>
