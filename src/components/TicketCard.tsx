@@ -1,11 +1,10 @@
-import NextImage from "next/image";
 import { useRouter } from "next/router";
 import { Button, Image, Space, Typography } from "antd";
 
 import { TicketLabel } from "./TicketLabel";
 import { ITicket } from "../interfaces/ITicket";
 
-import Pin from "../assets/icons/Pin.svg";
+import Location from "../assets/icons/Location.svg";
 import Heart from "../assets/icons/Heart.svg";
 import { Reviews } from "./Reviews";
 
@@ -23,6 +22,9 @@ export const TicketCard: React.FC<ITicketCardProps> = ({ ticket }) => {
         backgroundColor: "#fff",
         display: "flex",
         justifyContent: "space-between",
+        whiteSpace: "nowrap",
+        textOverflow: "ellipsis",
+        overflow: "hidden",
       }}
     >
       <div style={{ display: "flex" }}>
@@ -45,21 +47,25 @@ export const TicketCard: React.FC<ITicketCardProps> = ({ ticket }) => {
             }}
           >
             <TicketLabel />
-            <NextImage
-              src={Heart}
-              alt="Heart icon"
-              style={{
-                filter: "invert(100%)  brightness(200%) contrast(200%)",
-                boxShadow: "0px 4px 8px rgba(11, 31, 77, 0.1)",
-              }}
-            />
+            <Heart />
           </div>
         </div>
 
-        <div style={{ padding: "33.5px 24px" }}>
-          <div style={{ display: "flex", flexDirection: "column" }}>
+        <div
+          style={{
+            padding: "33.5px 24px",
+            justifyContent: "space-between",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
             <Typography
-              style={{ fontSize: 22, fontWeight: 500, color: "#0A2156" }}
+              className="heading-3"
+              style={{ color: "var(--brand-color-black)" }}
             >
               {ticket.name}
             </Typography>
@@ -71,14 +77,10 @@ export const TicketCard: React.FC<ITicketCardProps> = ({ ticket }) => {
                 marginBottom: 52,
               }}
             >
-              <NextImage src={Pin} alt="pin icon" />
+              <Location />
               <Typography
-                style={{
-                  fontSize: 14,
-                  fontWeight: 450,
-                  color: "#3C4C70",
-                  marginLeft: 4,
-                }}
+                className="paragraph-3"
+                style={{ color: "var(--gray-80)", fontWeight: 450 }}
               >
                 {ticket.location}
               </Typography>

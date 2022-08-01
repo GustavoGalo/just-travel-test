@@ -20,12 +20,12 @@ export const Footer = () => (
   <div style={{ display: "flex", flexDirection: "column" }}>
     <div
       style={{
-        height: 235,
         display: "flex",
         alignItems: "center",
         backgroundColor: "#4070F4",
         justifyContent: "space-between",
-        padding: "0 100px",
+        flexWrap: "wrap",
+        padding: 24,
       }}
     >
       <World />
@@ -53,7 +53,13 @@ export const Footer = () => (
       <Typography style={{ fontSize: 20, color: "#556282", marginBottom: 32 }}>
         Estes destinos incríveis têm muito a oferecer
       </Typography>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          flexWrap: "wrap",
+        }}
+      >
         <LocationCard
           image={BalnearioCamboriu}
           imageAlt="Balneário Camboriú landscape"
@@ -88,13 +94,14 @@ export const Footer = () => (
         padding: "75px 60px 32px",
         justifyContent: "space-between",
         alignItems: "center",
+        flexWrap: "wrap",
       }}
     >
       <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
         <Logo />
         <Typography
           style={{
-            width: 384,
+            maxWidth: 384,
             color: "white",
             fontWeight: 450,
             fontSize: 14,
@@ -111,7 +118,9 @@ export const Footer = () => (
           <Instagram />
         </div>
       </div>
-      <div style={{ display: "flex", gap: 32 }}>
+      <div
+        style={{ display: "flex", gap: 32, flexWrap: "wrap", paddingTop: 8 }}
+      >
         <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
           <Typography style={{ fontSize: 16, fontWeight: 700, color: "white" }}>
             Conheça
@@ -165,6 +174,7 @@ export const Footer = () => (
         backgroundColor: "#0BB07B",
         display: "flex",
         justifyContent: "space-between",
+        flexWrap: "wrap",
       }}
     >
       <Typography style={{ color: "white" }}>

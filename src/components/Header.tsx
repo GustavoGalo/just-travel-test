@@ -13,7 +13,6 @@ export const Header: React.FC = () => (
       height: 100,
       borderBottom: "0.8px solid #E7E9ED",
       padding: "35px 60px",
-
       display: "flex",
       alignItems: "center",
       justifyContent: "space-between",
@@ -30,7 +29,9 @@ export const Header: React.FC = () => (
           paddingRight: 20,
         }}
       >
-        <Typography style={{ fontSize: 12, fontWeight: 450, color: "#3C4C70" }}>
+        <Typography
+          style={{ fontSize: 12, fontWeight: 450, color: "var(--gray-100)" }}
+        >
           Cotação dólar hoje: R$5,53
         </Typography>
         <Image src={Brazil} alt="Brazil flag" height={21} />
