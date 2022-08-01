@@ -11,7 +11,7 @@ import {
   Typography,
   message,
 } from "antd";
-import { GetStaticPaths, GetStaticProps } from "next";
+import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next";
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 
 import { Footer } from "../../../components/Footer";
@@ -526,16 +526,23 @@ const Ticket: React.FC<IPageProps> = ({ ticket, location }) => {
 
 export default Ticket;
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const tickets = await listTickets();
+// export const getStaticPaths: GetStaticPaths = async () => {
+//   const tickets = await listTickets();
 
-  const paths = tickets.map((ticket) => ({ params: { id: ticket.id } }));
+//   const paths = tickets.map((ticket) => ({ params: { id: ticket.id } }));
 
-  return { paths, fallback: false };
-};
+//   return { paths, fallback: false };
+// };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const ticket = await getTicketById(params?.id as string);
+// export const getStaticProps: GetStaticProps = async ({ params }) => {
+//   const ticket = await getTicketById(params?.id as string);
+//   const location = await getLocalCoordinatesFromLocation(ticket.location);
+
+//   return { props: { ticket, location } };
+// };
+
+export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+  const ticket = await getTicketById(query?.id as string);
   const location = await getLocalCoordinatesFromLocation(ticket.location);
 
   return { props: { ticket, location } };
