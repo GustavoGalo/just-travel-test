@@ -36,6 +36,7 @@ import Calendar from "../../../assets/icons/caledar.svg";
 import User from "../../../assets/icons/User.svg";
 import moment from "moment";
 import { useState } from "react";
+import Head from "next/head";
 
 interface IPageProps {
   ticket: ITicket;
@@ -82,6 +83,9 @@ const Ticket: React.FC<IPageProps> = ({ ticket, location }) => {
 
   return (
     <div>
+      <Head>
+        <title>Just Travel - {ticket.name}</title>
+      </Head>
       <Header />
       <div style={{ backgroundColor: "#F6F6F6" }}>
         <div

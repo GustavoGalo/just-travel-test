@@ -14,6 +14,7 @@ import { ProgressBar } from "../../components/ProgressBar";
 import { SelectListType } from "../../components/SelectListType";
 import { SearchLocationDateBar } from "../../components/SearchLocationDateBar";
 import { PriceFilter } from "../../components/PriceFilter";
+import Head from "next/head";
 
 interface IPageProps {
   tickets: ITicket[];
@@ -24,6 +25,9 @@ const Tickets: React.FC<IPageProps> = ({ tickets }) => {
 
   return (
     <>
+      <Head>
+        <title>Just Travel - Ingressos</title>
+      </Head>
       <Header />
       <div
         style={{

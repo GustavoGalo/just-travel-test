@@ -7,6 +7,7 @@ import { ITicket } from "../interfaces/ITicket";
 import Location from "../assets/icons/Location.svg";
 import Heart from "../assets/icons/Heart.svg";
 import { Reviews } from "./Reviews";
+import Link from "next/link";
 
 interface ITicketCardProps {
   ticket: ITicket;
@@ -111,12 +112,10 @@ export const TicketCard: React.FC<ITicketCardProps> = ({ ticket }) => {
           </Typography>
         </div>
 
-        <Button
-          onClick={() => router.push(`/ticket/${ticket.id}`)}
-          type="primary"
-        >
+        <Link href={`/ticket/${ticket.id}`}>
           Saber mais
-        </Button>
+          {/* <Button type="primary"></Button> */}
+        </Link>
       </div>
     </Space>
   );
